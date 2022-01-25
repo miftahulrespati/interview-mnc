@@ -8,15 +8,11 @@ import (
 	"log"
 )
 
-// type Orders struct {
-// 	Orders []Order
-// }
-
 type Order struct {
-	OrderId             int      `json:"order_id"`
+	OrderId             int64    `json:"order_id"`
 	OrderDate           string   `json:"order_date"`
 	CustomerData        Customer `json:"customer_data"`
-	ItemsQuantity       int      `json:"items_quantity"`
+	ItemsQuantity       int64    `json:"items_quantity"`
 	PriceBeforeDiscount float64  `json:"price_before_discount"`
 	Discounts           float64  `json:"discounts"`
 	PriceAfterDiscount  float64  `json:"price_after_discount"`
@@ -24,7 +20,7 @@ type Order struct {
 }
 
 type Customer struct {
-	CustomerId      int    `json:"customer_id"`
+	CustomerId      int64  `json:"customer_id"`
 	Name            string `json:"name"`
 	Email           string `json:"email"`
 	Phone           string `json:"phone"`

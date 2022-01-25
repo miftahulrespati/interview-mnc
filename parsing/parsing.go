@@ -9,7 +9,7 @@ import (
 )
 
 type Order struct {
-	OrderId       int         `json:"order_id"`
+	OrderId       int64       `json:"order_id"`
 	OrderDate     string      `json:"order_date"`
 	Customer      Customer    `json:"customer"`
 	Items         []Items     `json:"items"`
@@ -18,7 +18,7 @@ type Order struct {
 }
 
 type Customer struct {
-	CustomerId      int             `json:"customer_id"`
+	CustomerId      int64           `json:"customer_id"`
 	FirstName       string          `json:"first_name"`
 	LastName        string          `json:"last_name"`
 	Email           string          `json:"email"`
@@ -34,13 +34,13 @@ type ShippingAddress struct {
 }
 
 type Items struct {
-	Quantity  int     `json:"quantity"`
+	Quantity  int64   `json:"quantity"`
 	UnitPrice float64 `json:"unit_price"`
 	Product   Product `json:"product"`
 }
 
 type Product struct {
-	ProductId int      `json:"product"`
+	ProductId int64    `json:"product"`
 	Title     string   `json:"title"`
 	Subtitle  string   `json:"subtitle"`
 	Image     string   `json:"image"`
@@ -54,14 +54,14 @@ type Product struct {
 }
 
 type Brand struct {
-	Id   int    `json:"id"`
+	Id   int64  `json:"id"`
 	Name string `json:"name"`
 }
 
 type Discounts struct {
 	Type     string  `json:"type"`
 	Value    float64 `json:"value"`
-	Priority int     `json:"priority"`
+	Priority int64   `json:"priority"`
 }
 
 func Parsing() (orders []Order) {
